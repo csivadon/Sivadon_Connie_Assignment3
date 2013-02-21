@@ -56,9 +56,6 @@ console.log ("Our clan's name is " + jsonClanInfo.clanName + ".");
 var leaderName = jsonClanInfo.clanMemberInfo[0][name];
 var yearsAsLeader = jsonClanInfo.clanMemberInfo[0]["memberForYears"] + " years.";
 var clanOnline = true;
-var numberOfMembers;
-var clanLeaderCall = "Everyone ready?";
-var clanReady = " Ya!";
 
 // console.log leader info	
 console.log ("Our clan leader is " + leaderName + " . He has been the leader for " + yearsAsLeader);
@@ -76,79 +73,77 @@ var playOnline = function(clanOnline) {
 };
 playOnline(clanOnline);
 
-//whoOnline object
-var whoOnline = {
-	player1Info: {
-		name: 		"Patrick",
-		favPosition: 	"rusher",
-		favPrimeWeapon: "MSMC SMG",
-		favGameMode: 	"Kill Confirmed",
-		totalHeadshots:	4256
-	},
-	player2Info: {
-		name: 		"Chris",
-		favPosition: 	"rusher",
-		favPrimeWeapon: "Patriot SMG",
-		favGameMode: 	"Capture the Flag",
-		totalHeadshots:	2976
-	},
-	player3Info: {
-		name: 		"Andre",
-		favPosition: 	"defender",
-		favPrimeWeapon: "FAL AR",
-		favGameMode: 	"Domination",
-		totalHeadshots:	2769	
-	},
-	player4Info: {
-		name: 		"Connie",
-		favPosition: 	"defender",
-		favPrimeWeapon: "50 Cal SR",
-		favGameMode: 	"Capture the Flag",
-		totalHeadshots:	1024	
-	},
-	player5Info: {
-		name: 		"Carsten",
-		favPosition: 	"switcher",
-		favPrimeWeapon: "SWAT AR",
-		favGameMode: 	"Capture the Flag",
-		totalHeadshots:	943	
-	},	
-}; // whoOnline
-console.log(whoOnline);
-
-
-
-
-
-
-
-
-
-
-
-/*
-Project 2 code 
-var clanOnline = true;
-var	clanMembers = [ "Patrick", "Connie", "Chris", "Andre", "Michael", "Stephan" ];
-var	numberOfMembers;
-var positions = [ "sniper", "defender", "rusher", "rusher", "defender", "floater" ];
-var	clanLeaderReady = "Everyone ready?";
-var	clanReady = " Ya!";
-numberOfMembers = clanMembers.length;
-
-// Procedure
-
-var playOnline = function(clanOnline) {
-	if (clanOnline === true) {
-		console.log("Hey guys, lets play Black Ops 2.");	
-	} else {
-		console.log("Shucks, nobody is online.  I guess I'll play Resident Evil 6.");	
-	}		
+// player objects
+var player1 = {
+	name: 		"Patrick",
+	favPosition: 	"rusher",
+	favPrimeWeapon: "MSMC SMG",
+	favGameMode: 	"Kill Confirmed",
+	totalHeadshots:	4256,
+	askReady: function (){
+		return "\"Is everyone ready to start?\""
+	}
 };
-playOnline(clanOnline);
+var player2 = {
+	name: 		"Chris",
+	favPosition: 	"rusher",
+	favPrimeWeapon: "Patriot SMG",
+	favGameMode: 	"Capture the Flag",
+	totalHeadshots:	2976
+};
+var player3 = {
+	name: 		"Andre",
+	favPosition: 	"defender",
+	favPrimeWeapon: "FAL AR",
+	favGameMode: 	"Domination",
+	totalHeadshots:	2769	
+};
+var player4 = {
+	name: 		"Connie",
+	favPosition: 	"defender",
+	favPrimeWeapon: "50 Cal SR",
+	favGameMode: 	"Capture the Flag",
+	totalHeadshots:	1024	
+};
+var player5 = {
+	name: 		"Carsten",
+	favPosition: 	"switcher",
+	favPrimeWeapon: "SWAT AR",
+	favGameMode: 	"Capture the Flag",
+	totalHeadshots:	943	
+};
+
+var question = player1.askReady();
+
+
+
+
+
+
+
+
+console.log("Our clan leader asks " + question);
+
+
+
+	
+
+ // getGameMode
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Boolean Function
-
+/*
 var getGameMode = function(numberOfMembers) {
 	if (numberOfMembers > 4) {
 		return console.log("Since we have " + numberOfMembers + " clan members today, let's play \"Capture the Flag\".");
