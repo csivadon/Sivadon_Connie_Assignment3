@@ -5,10 +5,11 @@
 
 // main code variables
 var jsonClanInfo = {
-	"clanName"			 : "Enthusiastic Daddlers Online",
-	"clanTag" 			 : "edo",
-	"numberOfActiveMemb" : 9,
-	"clanMemberInfo" : [
+	"clanName":		"Enthusiastic Daddlers Online",
+	"clanTag": 		"edo",
+	"numberOfActiveMemb": 	9,
+	"clanOnline":		true,
+	"clanMemberInfo" : 	[
 		{
 			"name" 		 : "Patrick",
 			"clanPosition"   : "Leader",
@@ -49,20 +50,19 @@ var jsonClanInfo = {
 		},
 	] // clanMemberInfo
 }; //jsonClanInfo
-// console.log (jsonClanInfo);
 console.log ("Our clan's name is " + jsonClanInfo.clanName + ".");
 
 // Global variables
 var leaderName = jsonClanInfo.clanMemberInfo[0][name];
 var yearsAsLeader = jsonClanInfo.clanMemberInfo[0]["memberForYears"] + " years.";
-var clanOnline = true;
+var clanOnline = jsonClanInfo.clanOnline;
+var headshotsGoal = 3000;
 
-// console.log leader info	
 console.log ("Our clan leader is " + leaderName + " . He has been the leader for " + yearsAsLeader);
 
-// procedure
 console.log ("Let's check if any of the members are online.");
 
+// Procedure Function
 var playOnline = function(clanOnline) {
 	if (clanOnline === true) {
 		console.log( "Yes, they are.");
@@ -89,37 +89,55 @@ var player2 = {
 	favPosition: 	"rusher",
 	favPrimeWeapon: "Patriot SMG",
 	favGameMode: 	"Capture the Flag",
-	totalHeadshots:	2976
+	totalHeadshots:	2976,
+	getAnswer: function () {
+		return "\"Yeah!\""
+	},
+	needHeadshots: function (headshots) {
+		var headshotsNeeded = headshots - this.totalHeadshots;
+		return headshotsNeeded;
+	} // return number
 };
 var player3 = {
 	name: 		"Andre",
 	favPosition: 	"defender",
 	favPrimeWeapon: "FAL AR",
 	favGameMode: 	"Domination",
-	totalHeadshots:	2769	
+	totalHeadshots:	2769,
+	getAnswer: function () {
+		return "\"We are waiting for you!\""
+		}
 };
 var player4 = {
 	name: 		"Connie",
 	favPosition: 	"defender",
 	favPrimeWeapon: "50 Cal SR",
 	favGameMode: 	"Capture the Flag",
-	totalHeadshots:	1024	
+	totalHeadshots:	1024,
+	getAnswer: function () {
+		return "\"Hurry, I have to get up early tomorrow!\""
+		}
 };
 var player5 = {
 	name: 		"Carsten",
 	favPosition: 	"switcher",
 	favPrimeWeapon: "SWAT AR",
 	favGameMode: 	"Capture the Flag",
-	totalHeadshots:	943	
+	totalHeadshots:	943,
+	getAnswer: function () {
+		return "\"Can we start already!\""
+		}
+	
 };
 
 var question = player1.askReady();
+var headshotsNeeded = player2.needHeadshots(headshotsGoal); // Returned number value
 
-
-
-
-
-
+console.log("Chris says \"My goal today is to reach "+
+	    headshotsGoal +
+	    " headshots.  I have " +
+	    headshotsNeeded +
+	    " left to make.\"");
 
 
 console.log("Our clan leader asks " + question);
