@@ -10,40 +10,40 @@ var jsonClanInfo = {
 	"numberOfActiveMemb" : 9,
 	"clanMemberInfo" : [
 		{
-			"name" 			 : "Patrick",
+			"name" 		 : "Patrick",
 			"clanPosition"   : "Leader",
 			"memberForYears" : 7
 		},{
-			"name" 			 : "Connie",
+			"name" 		 : "Connie",
 			"clanPosition" 	 : "Member",
 			"memberForYears" : 6
 		},{
-			"name" 			 : "Michael",
+			"name" 		 : "Michael",
 			"clanPosition" 	 : "Member",
 			"memberForYears" : 6
 		},{
-			"name"			 : "Chris",
+			"name"		 : "Chris",
 			"clanPosition" 	 : "Member",
 			"memberForYears" : 3
 
 		},{
-			"name" 			 : "Andre",
+			"name" 		 : "Andre",
 			"clanPosition" 	 : "Member",
 			"memberForYears" : 3
 		},{
-			"name" 			 : "Stephan",
+			"name" 		 : "Stephan",
 			"clanPosition" 	 : "Member",
 			"memberForYears" : 3
 		},{
-			"name" 			 : "Danny",
+			"name" 		 : "Danny",
 			"clanPosition"	 : "Member",
 			"memberForYears" : 1
 		},{
-			"name"			 : "Jessy",
+			"name"		 : "Jessy",
 			"clanPosition" 	 : "Member",
 			"memberForYears" : 1
 		},{
-			"name" 			 : "Carsten",
+			"name" 		 : "Carsten",
 			"clanPosition" 	 : "Member",
 			"memberForYears" : 2
 		},
@@ -53,7 +53,7 @@ var jsonClanInfo = {
 console.log ("Our clan's name is " + jsonClanInfo.clanName + ".");
 
 // Global variables
-var leaderName = jsonClanInfo.clanMemberInfo[0]["name"];
+var leaderName = jsonClanInfo.clanMemberInfo[0][name];
 var yearsAsLeader = jsonClanInfo.clanMemberInfo[0]["memberForYears"] + " years.";
 var clanOnline = true;
 var numberOfMembers;
@@ -75,6 +75,47 @@ var playOnline = function(clanOnline) {
 	}		
 };
 playOnline(clanOnline);
+
+//whoOnline object
+var whoOnline = {
+	player1Info: {
+		name: 		"Patrick",
+		favPosition: 	"rusher",
+		favPrimeWeapon: "MSMC SMG",
+		favGameMode: 	"Kill Confirmed",
+		totalHeadshots:	4256
+	},
+	player2Info: {
+		name: 		"Chris",
+		favPosition: 	"rusher",
+		favPrimeWeapon: "Patriot SMG",
+		favGameMode: 	"Capture the Flag",
+		totalHeadshots:	2976
+	},
+	player3Info: {
+		name: 		"Andre",
+		favPosition: 	"defender",
+		favPrimeWeapon: "FAL AR",
+		favGameMode: 	"Domination",
+		totalHeadshots:	2769	
+	},
+	player4Info: {
+		name: 		"Connie",
+		favPosition: 	"defender",
+		favPrimeWeapon: "50 Cal SR",
+		favGameMode: 	"Capture the Flag",
+		totalHeadshots:	1024	
+	},
+	player5Info: {
+		name: 		"Carsten",
+		favPosition: 	"switcher",
+		favPrimeWeapon: "SWAT AR",
+		favGameMode: 	"Capture the Flag",
+		totalHeadshots:	943	
+	},	
+}; // whoOnline
+console.log(whoOnline);
+
 
 
 
