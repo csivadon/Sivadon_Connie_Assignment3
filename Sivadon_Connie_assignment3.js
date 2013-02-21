@@ -101,12 +101,21 @@ var player2 = {
 var player3 = {
 	name: 		"Andre",
 	favPosition: 	"defender",
-	favPrimeWeapon: "FAL AR",
+	favPrimeWeapon: ["FAL AR", "MSMC SMG", "SCAR AR"],
+	favSecWeapon:	["pistol", "cross bow", "balistic knife"],
 	favGameMode: 	"Domination",
 	totalHeadshots:	2769,
-	getAnswer: function () {
-		return "\"We are waiting for you!\""
+	favWeapons:	function (array1, array2) { // Method Function
+		for (var p = 0, l = this.favPrimeWeapon.length; p < l; p++) { // For Loop
+			//console.log("I like the " + this.favPrimeWeapon[p] + ".");
+			for (var p = 0, t = this.favSecWeapon.length; p < t; p++) {
+				console.log("I like the " + this.favPrimeWeapon[p] + " and " + this.favSecWeapon[p] + ".");
+			} // Nested Loop
+		} {
+			console.log("Which combo do I choose?");
+			return [this.favPrimeWeapon[1], this.favSecWeapon[1]]; // Return Array
 		}
+	}
 };
 var player4 = {
 	name: 		"Connie",
@@ -129,15 +138,22 @@ var player5 = {
 		}
 	
 };
+var array1 = player3.favPrimeWeapon;
+var array2 = player3.favSecWeapon;
 
+
+
+// Return values
 var question = player1.askReady();
 var headshotsNeeded = player2.needHeadshots(headshotsGoal); // Returned number value
+var favWeapon = player3.favWeapons(array1, array2);
 
-console.log("Chris says \"My goal today is to reach "+
-	    headshotsGoal +
-	    " headshots.  I have " +
-	    headshotsNeeded +
-	    " left to make.\"");
+// outputs
+console.log("Andre says \"My vaforite prime weapon is " + favWeapon[0] +
+	    ", and my favorite secondary side weapon is " + favWeapon[1] +
+	    ". I'll use these today.\"");
+
+console.log("Chris says \"My goal today is to reach "+ headshotsGoal + " headshots.  I have " + headshotsNeeded + " left to make.\"");
 
 
 console.log("Our clan leader asks " + question);
