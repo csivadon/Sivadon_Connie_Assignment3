@@ -60,12 +60,21 @@ var numberOfMembers;
 var clanLeaderCall = "Everyone ready?";
 var clanReady = " Ya!";
 
-	
+// console.log leader info	
 console.log ("Our clan leader is " + leaderName + " . He has been the leader for " + yearsAsLeader);
 
+// procedure
+console.log ("Let's check if any of the members are online.");
 
-
-
+var playOnline = function(clanOnline) {
+	if (clanOnline === true) {
+		console.log( "Yes, they are.");
+		console.log("Hey guys, lets play Black Ops 2");	
+	} else {
+		console.log("Shucks, nobody is online.  I guess I'll play Resident Evil 6.");	
+	}		
+};
+playOnline(clanOnline);
 
 
 
