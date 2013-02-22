@@ -58,8 +58,8 @@ var yearsAsLeader = jsonClanInfo.clanMemberInfo[0]["memberForYears"] + " years."
 var clanOnline = jsonClanInfo.clanOnline;
 var headshotsGoal = 3000;
 
+// Outputs
 console.log ("Our clan leader is " + leaderName + " . He has been the leader for " + yearsAsLeader);
-
 console.log ("Let's check if any of the members are online.");
 
 // Procedure Function
@@ -107,7 +107,7 @@ var player3 = {
 	totalHeadshots:	2769,
 	favWeapons:	function (array1, array2) { // Method Function
 		for (var p = 0, l = this.favPrimeWeapon.length; p < l; p++) { // For Loop
-			//console.log("I like the " + this.favPrimeWeapon[p] + ".");
+			console.log("Andre thinks to himself...");
 			for (var p = 0, t = this.favSecWeapon.length; p < t; p++) {
 				console.log("I like the " + this.favPrimeWeapon[p] + " and " + this.favSecWeapon[p] + ".");
 			} // Nested Loop
@@ -131,7 +131,7 @@ var player4 = {
 				return false; 
 			}
 		} else {
-			return player4.ready = true; // Mutator
+			return player4.ready = true; // object key
 		}
 		return "\"Hurry, I have to get up early tomorrow!\"" // Return string
 		}
@@ -141,96 +141,35 @@ var player5 = {
 	favPosition: 	"switcher",
 	favPrimeWeapon: "SWAT AR",
 	favGameMode: 	"Capture the Flag",
+	readyPlay:	"I am ready to roll!",
 	totalHeadshots:	943,
-	getAnswer: function () {
+	getAnswer: function (readyPlay) {
 		return "\"Can we start already!\""
 		}
 	
 };
+// Global Variables
 var array1 = player3.favPrimeWeapon;
 var array2 = player3.favSecWeapon;
 var ready = player4.ready;
 var classReady = player4.classReady;
-
+var readyPlay = player5.readyPlay;
 
 // Return values
 var question = player1.askReady();
 var headshotsNeeded = player2.needHeadshots(headshotsGoal); // Returned number value
 var favWeapon = player3.favWeapons(array1, array2);
 var isReady = player4.getAnswer(ready, classReady);
+var getAnswer = player5.getAnswer(readyPlay);
 
 // outputs
-console.log("Andre says \"My vaforite prime weapon is " + favWeapon[0] +
-	    ", and my favorite secondary side weapon is " + favWeapon[1] +
+console.log("Andre says \"My vaforite prime weapon is the " + favWeapon[0] +
+	    ", and my favorite secondary side weapon is the " + favWeapon[1] +
 	    ". I'll use these today.\"");
-
-console.log("Chris says \"My goal today is to reach "+ headshotsGoal + " headshots.  I have " + headshotsNeeded + " left to make.\"");
-
+console.log("Chris says \"My goal today is to reach "+ headshotsGoal +
+	    " headshots.  I have " + headshotsNeeded + " left to make.\"");
 console.log("Our clan leader asks " + question);
+console.log("Connie says " + isReady);
+console.log("Carsten says " + getAnswer);	
 
-console.log(isReady);
-
-	
-
- // getGameMode
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Boolean Function
-/*
-var getGameMode = function(numberOfMembers) {
-	if (numberOfMembers > 4) {
-		return console.log("Since we have " + numberOfMembers + " clan members today, let's play \"Capture the Flag\".");
-	} else {
-		return console.log("Since we have only " + numberOfMembers + " clan members today, let's play \"Kill Confirmed\".");
-	}
-};
-
-// Number Function
-
-var getNumberOfPositions = function(numberOfMembers) {
-	console.log("Does everyone have their classes set?");
-	var player = 1;
-	while (player < 6) {
-		console.log(player + " players have their classes set.");
-		player++;
-	};
-	return console.log("All " + player + " players are set and ready to go.");
-};
-
-// Array Function
-
-var getPositions = function(clanMembers,positions) {
-	for (var i=0, j=clanMembers.length; i < j; i++) {
-		console.log( clanMembers[i]	+ " is a " + positions[i] + ".");
-	};
-	return console.log( "All members know their positions." );
-};
-
-//String Function
-
-var getStatus = function(clanLeaderReady, clanReady) {
-	if (clanReady === " Ya!") {
-		return console.log(clanLeaderReady + clanReady + " Start already!");	
-	} else {
-		return console.log(clanLeaderReady + " Not yet. Wait to start please.");
-	};
-};
-
-// Output
-
-getGameMode(numberOfMembers);
-getNumberOfPositions(numberOfMembers);
-getPositions(clanMembers,positions);
-getStatus(clanLeaderReady, clanReady);
-*/
+ 
