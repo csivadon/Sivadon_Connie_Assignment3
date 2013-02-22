@@ -121,10 +121,19 @@ var player4 = {
 	name: 		"Connie",
 	favPosition: 	"defender",
 	favPrimeWeapon: "50 Cal SR",
-	favGameMode: 	"Capture the Flag",
+	favGameMode: 	["Capture the Flag"],
 	totalHeadshots:	1024,
-	getAnswer: function () {
-		return "\"Hurry, I have to get up early tomorrow!\""
+	ready:		false,
+	classReady:	true,
+	getAnswer: function (ready,classReady) {
+		if (ready === false) { // Boolean property
+			if (classReady === false) { // Nested conditional
+				return false; 
+			}
+		} else {
+			return player4.ready = true; // Mutator
+		}
+		return "\"Hurry, I have to get up early tomorrow!\"" // Return string
 		}
 };
 var player5 = {
@@ -140,13 +149,15 @@ var player5 = {
 };
 var array1 = player3.favPrimeWeapon;
 var array2 = player3.favSecWeapon;
-
+var ready = player4.ready;
+var classReady = player4.classReady;
 
 
 // Return values
 var question = player1.askReady();
 var headshotsNeeded = player2.needHeadshots(headshotsGoal); // Returned number value
 var favWeapon = player3.favWeapons(array1, array2);
+var isReady = player4.getAnswer(ready, classReady);
 
 // outputs
 console.log("Andre says \"My vaforite prime weapon is " + favWeapon[0] +
@@ -155,10 +166,9 @@ console.log("Andre says \"My vaforite prime weapon is " + favWeapon[0] +
 
 console.log("Chris says \"My goal today is to reach "+ headshotsGoal + " headshots.  I have " + headshotsNeeded + " left to make.\"");
 
-
 console.log("Our clan leader asks " + question);
 
-
+console.log(isReady);
 
 	
 
